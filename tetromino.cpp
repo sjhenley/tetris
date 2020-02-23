@@ -1,174 +1,176 @@
 #include <time.h>
+#include <stdlib.h>
+#include <stdint.h>
 
-#include <tetromino.h>
-#include <dims.h>
+#include "tetromino.h"
+#include "dims.h"
 
 void new_tetromino(tetromino_t *t) {
 	srand(time(0));
 	
-	t = malloc(sizeof (tetromino_t));
-	t->type = rand() % 7;
-	t->orientation - 0;
+	
+	t->type = (tetromino_type)(rand() % 7);
+	t->orientation = 0;
 	
 	switch (t->type){
 		case type_i:
-			t->grid[0][0]->filled = false;
-			t->grid[0][1]->filled = false;
-			t->grid[0][2]->filled = false;
-			t->grid[0][3]->filled = false;
+			t->grid[0][0].filled = false;
+			t->grid[0][1].filled = false;
+			t->grid[0][2].filled = false;
+			t->grid[0][3].filled = false;
 			
-			t->grid[1][0]->filled = true;
-			t->grid[1][1]->filled = true;
-			t->grid[1][2]->filled = true;
-			t->grid[1][3]->filled = true;
+			t->grid[1][0].filled = true;
+			t->grid[1][1].filled = true;
+			t->grid[1][2].filled = true;
+			t->grid[1][3].filled = true;
 			
-			t->grid[2][0]->filled = false;
-			t->grid[2][1]->filled = false;
-			t->grid[2][2]->filled = false;
-			t->grid[2][3]->filled = false;
+			t->grid[2][0].filled = false;
+			t->grid[2][1].filled = false;
+			t->grid[2][2].filled = false;
+			t->grid[2][3].filled = false;
 			
-			t->grid[3][0]->filled = false;
-			t->grid[3][1]->filled = false;
-			t->grid[3][2]->filled = false;
-			t->grid[3][3]->filled = false;
+			t->grid[3][0].filled = false;
+			t->grid[3][1].filled = false;
+			t->grid[3][2].filled = false;
+			t->grid[3][3].filled = false;
 			
 			break;
 		
 		case type_j:
-			t->grid[0][0]->filled = true;
-			t->grid[0][1]->filled = false;
-			t->grid[0][2]->filled = false;
-			t->grid[0][3]->filled = false;
+			t->grid[0][0].filled = true;
+			t->grid[0][1].filled = false;
+			t->grid[0][2].filled = false;
+			t->grid[0][3].filled = false;
 			
-			t->grid[1][0]->filled = true;
-			t->grid[1][1]->filled = true;
-			t->grid[1][2]->filled = true;
-			t->grid[1][3]->filled = false;
+			t->grid[1][0].filled = true;
+			t->grid[1][1].filled = true;
+			t->grid[1][2].filled = true;
+			t->grid[1][3].filled = false;
 			
-			t->grid[2][0]->filled = false;
-			t->grid[2][1]->filled = false;
-			t->grid[2][2]->filled = false;
-			t->grid[2][3]->filled = false;
+			t->grid[2][0].filled = false;
+			t->grid[2][1].filled = false;
+			t->grid[2][2].filled = false;
+			t->grid[2][3].filled = false;
 			
-			t->grid[3][0]->filled = false;
-			t->grid[3][1]->filled = false;
-			t->grid[3][2]->filled = false;
-			t->grid[3][3]->filled = false;
+			t->grid[3][0].filled = false;
+			t->grid[3][1].filled = false;
+			t->grid[3][2].filled = false;
+			t->grid[3][3].filled = false;
 			
 			break;
 		
 		case type_l:
-			t->grid[0][0]->filled = false;
-			t->grid[0][1]->filled = false;
-			t->grid[0][2]->filled = true;
-			t->grid[0][3]->filled = false;
+			t->grid[0][0].filled = false;
+			t->grid[0][1].filled = false;
+			t->grid[0][2].filled = true;
+			t->grid[0][3].filled = false;
 			
-			t->grid[1][0]->filled = true;
-			t->grid[1][1]->filled = true;
-			t->grid[1][2]->filled = true;
-			t->grid[1][3]->filled = false;
+			t->grid[1][0].filled = true;
+			t->grid[1][1].filled = true;
+			t->grid[1][2].filled = true;
+			t->grid[1][3].filled = false;
 			
-			t->grid[2][0]->filled = false;
-			t->grid[2][1]->filled = false;
-			t->grid[2][2]->filled = false;
-			t->grid[2][3]->filled = false;
+			t->grid[2][0].filled = false;
+			t->grid[2][1].filled = false;
+			t->grid[2][2].filled = false;
+			t->grid[2][3].filled = false;
 			
-			t->grid[3][0]->filled = false;
-			t->grid[3][1]->filled = false;
-			t->grid[3][2]->filled = false;
-			t->grid[3][3]->filled = false;
+			t->grid[3][0].filled = false;
+			t->grid[3][1].filled = false;
+			t->grid[3][2].filled = false;
+			t->grid[3][3].filled = false;
 			
 			break;
 		
 		case type_z:
-			t->grid[0][0]->filled = true;
-			t->grid[0][1]->filled = true;
-			t->grid[0][2]->filled = false;
-			t->grid[0][3]->filled = false;
+			t->grid[0][0].filled = true;
+			t->grid[0][1].filled = true;
+			t->grid[0][2].filled = false;
+			t->grid[0][3].filled = false;
 			
-			t->grid[1][0]->filled = false;
-			t->grid[1][1]->filled = true;
-			t->grid[1][2]->filled = true;
-			t->grid[1][3]->filled = false;
+			t->grid[1][0].filled = false;
+			t->grid[1][1].filled = true;
+			t->grid[1][2].filled = true;
+			t->grid[1][3].filled = false;
 			
-			t->grid[2][0]->filled = false;
-			t->grid[2][1]->filled = false;
-			t->grid[2][2]->filled = false;
-			t->grid[2][3]->filled = false;
+			t->grid[2][0].filled = false;
+			t->grid[2][1].filled = false;
+			t->grid[2][2].filled = false;
+			t->grid[2][3].filled = false;
 			
-			t->grid[3][0]->filled = false;
-			t->grid[3][1]->filled = false;
-			t->grid[3][2]->filled = false;
-			t->grid[3][3]->filled = false;
+			t->grid[3][0].filled = false;
+			t->grid[3][1].filled = false;
+			t->grid[3][2].filled = false;
+			t->grid[3][3].filled = false;
 		
 			break;
 		
 		case type_s:
-			t->grid[0][0]->filled = false;
-			t->grid[0][1]->filled = true;
-			t->grid[0][2]->filled = true;
-			t->grid[0][3]->filled = false;
+			t->grid[0][0].filled = false;
+			t->grid[0][1].filled = true;
+			t->grid[0][2].filled = true;
+			t->grid[0][3].filled = false;
 			
-			t->grid[1][0]->filled = true;
-			t->grid[1][1]->filled = true;
-			t->grid[1][2]->filled = false;
-			t->grid[1][3]->filled = false;
+			t->grid[1][0].filled = true;
+			t->grid[1][1].filled = true;
+			t->grid[1][2].filled = false;
+			t->grid[1][3].filled = false;
 			
-			t->grid[2][0]->filled = false;
-			t->grid[2][1]->filled = false;
-			t->grid[2][2]->filled = false;
-			t->grid[2][3]->filled = false;
+			t->grid[2][0].filled = false;
+			t->grid[2][1].filled = false;
+			t->grid[2][2].filled = false;
+			t->grid[2][3].filled = false;
 			
-			t->grid[3][0]->filled = false;
-			t->grid[3][1]->filled = false;
-			t->grid[3][2]->filled = false;
-			t->grid[3][3]->filled = false;
+			t->grid[3][0].filled = false;
+			t->grid[3][1].filled = false;
+			t->grid[3][2].filled = false;
+			t->grid[3][3].filled = false;
 			
 			break;
 		
 		case type_o:
-			t->grid[0][0]->filled = false;
-			t->grid[0][1]->filled = true;
-			t->grid[0][2]->filled = true;
-			t->grid[0][3]->filled = false;
+			t->grid[0][0].filled = false;
+			t->grid[0][1].filled = true;
+			t->grid[0][2].filled = true;
+			t->grid[0][3].filled = false;
 			
-			t->grid[1][0]->filled = false;
-			t->grid[1][1]->filled = true;
-			t->grid[1][2]->filled = true;
-			t->grid[1][3]->filled = false;
+			t->grid[1][0].filled = false;
+			t->grid[1][1].filled = true;
+			t->grid[1][2].filled = true;
+			t->grid[1][3].filled = false;
 			
-			t->grid[2][0]->filled = false;
-			t->grid[2][1]->filled = false;
-			t->grid[2][2]->filled = false;
-			t->grid[2][3]->filled = false;
+			t->grid[2][0].filled = false;
+			t->grid[2][1].filled = false;
+			t->grid[2][2].filled = false;
+			t->grid[2][3].filled = false;
 			
-			t->grid[3][0]->filled = false;
-			t->grid[3][1]->filled = false;
-			t->grid[3][2]->filled = false;
-			t->grid[3][3]->filled = false;
+			t->grid[3][0].filled = false;
+			t->grid[3][1].filled = false;
+			t->grid[3][2].filled = false;
+			t->grid[3][3].filled = false;
 			
 			break;
 			
 		case type_t:
-			t->grid[0][0]->filled = false;
-			t->grid[0][1]->filled = true;
-			t->grid[0][2]->filled = false;
-			t->grid[0][3]->filled = false;
+			t->grid[0][0].filled = false;
+			t->grid[0][1].filled = true;
+			t->grid[0][2].filled = false;
+			t->grid[0][3].filled = false;
 			
-			t->grid[1][0]->filled = true;
-			t->grid[1][1]->filled = true;
-			t->grid[1][2]->filled = true;
-			t->grid[1][3]->filled = false;
+			t->grid[1][0].filled = true;
+			t->grid[1][1].filled = true;
+			t->grid[1][2].filled = true;
+			t->grid[1][3].filled = false;
 			
-			t->grid[2][0]->filled = false;
-			t->grid[2][1]->filled = false;
-			t->grid[2][2]->filled = false;
-			t->grid[2][3]->filled = false;
+			t->grid[2][0].filled = false;
+			t->grid[2][1].filled = false;
+			t->grid[2][2].filled = false;
+			t->grid[2][3].filled = false;
 			
-			t->grid[3][0]->filled = false;
-			t->grid[3][1]->filled = false;
-			t->grid[3][2]->filled = false;
-			t->grid[3][3]->filled = false;
+			t->grid[3][0].filled = false;
+			t->grid[3][1].filled = false;
+			t->grid[3][2].filled = false;
+			t->grid[3][3].filled = false;
 			
 			break;
 	}
@@ -181,99 +183,99 @@ void rotate_i(tetromino_t *t)
 	switch (t->orientation)
 	{
 		case 0:
-			t->grid[0][0]->filled = false;
-			t->grid[0][1]->filled = false;
-			t->grid[0][2]->filled = true;
-			t->grid[0][3]->filled = false;
+			t->grid[0][0].filled = false;
+			t->grid[0][1].filled = false;
+			t->grid[0][2].filled = true;
+			t->grid[0][3].filled = false;
 			
-			t->grid[1][0]->filled = false;
-			t->grid[1][1]->filled = false;
-			t->grid[1][2]->filled = true;
-			t->grid[1][3]->filled = false;
+			t->grid[1][0].filled = false;
+			t->grid[1][1].filled = false;
+			t->grid[1][2].filled = true;
+			t->grid[1][3].filled = false;
 			
-			t->grid[2][0]->filled = false;
-			t->grid[2][1]->filled = false;
-			t->grid[2][2]->filled = true;
-			t->grid[2][3]->filled = false;
+			t->grid[2][0].filled = false;
+			t->grid[2][1].filled = false;
+			t->grid[2][2].filled = true;
+			t->grid[2][3].filled = false;
 			
-			t->grid[3][0]->filled = false;
-			t->grid[3][1]->filled = false;
-			t->grid[3][2]->filled = true;
-			t->grid[3][3]->filled = false;
+			t->grid[3][0].filled = false;
+			t->grid[3][1].filled = false;
+			t->grid[3][2].filled = true;
+			t->grid[3][3].filled = false;
 			
-			orientation = 1;
+			t->orientation = 1;
 			break;
 			
 		case 1:
-			t->grid[0][0]->filled = false;
-			t->grid[0][1]->filled = false;
-			t->grid[0][2]->filled = false;
-			t->grid[0][3]->filled = false;
+			t->grid[0][0].filled = false;
+			t->grid[0][1].filled = false;
+			t->grid[0][2].filled = false;
+			t->grid[0][3].filled = false;
 			
-			t->grid[1][0]->filled = false;
-			t->grid[1][1]->filled = false;
-			t->grid[1][2]->filled = false;
-			t->grid[1][3]->filled = false;
+			t->grid[1][0].filled = false;
+			t->grid[1][1].filled = false;
+			t->grid[1][2].filled = false;
+			t->grid[1][3].filled = false;
 			
-			t->grid[2][0]->filled = true;
-			t->grid[2][1]->filled = true;
-			t->grid[2][2]->filled = true;
-			t->grid[2][3]->filled = true;
+			t->grid[2][0].filled = true;
+			t->grid[2][1].filled = true;
+			t->grid[2][2].filled = true;
+			t->grid[2][3].filled = true;
 			
-			t->grid[3][0]->filled = false;
-			t->grid[3][1]->filled = false;
-			t->grid[3][2]->filled = false;
-			t->grid[3][3]->filled = false;
+			t->grid[3][0].filled = false;
+			t->grid[3][1].filled = false;
+			t->grid[3][2].filled = false;
+			t->grid[3][3].filled = false;
 			
-			orientation = 2;
+			t->orientation = 2;
 			break;
 			
 		case 2:
-			t->grid[0][0]->filled = false;
-			t->grid[0][1]->filled = true;
-			t->grid[0][2]->filled = false;
-			t->grid[0][3]->filled = false;
+			t->grid[0][0].filled = false;
+			t->grid[0][1].filled = true;
+			t->grid[0][2].filled = false;
+			t->grid[0][3].filled = false;
 			
-			t->grid[1][0]->filled = false;
-			t->grid[1][1]->filled = true;
-			t->grid[1][2]->filled = false;
-			t->grid[1][3]->filled = false;
+			t->grid[1][0].filled = false;
+			t->grid[1][1].filled = true;
+			t->grid[1][2].filled = false;
+			t->grid[1][3].filled = false;
 			
-			t->grid[2][0]->filled = false;
-			t->grid[2][1]->filled = true;
-			t->grid[2][2]->filled = false;
-			t->grid[2][3]->filled = false;
+			t->grid[2][0].filled = false;
+			t->grid[2][1].filled = true;
+			t->grid[2][2].filled = false;
+			t->grid[2][3].filled = false;
 			
-			t->grid[3][0]->filled = false;
-			t->grid[3][1]->filled = true;
-			t->grid[3][2]->filled = false;
-			t->grid[3][3]->filled = false;
+			t->grid[3][0].filled = false;
+			t->grid[3][1].filled = true;
+			t->grid[3][2].filled = false;
+			t->grid[3][3].filled = false;
 			
-			orientation = 3;
+			t->orientation = 3;
 			break;
 			
 		case 3:
-			t->grid[0][0]->filled = false;
-			t->grid[0][1]->filled = false;
-			t->grid[0][2]->filled = false;
-			t->grid[0][3]->filled = false;
+			t->grid[0][0].filled = false;
+			t->grid[0][1].filled = false;
+			t->grid[0][2].filled = false;
+			t->grid[0][3].filled = false;
 			
-			t->grid[1][0]->filled = true;
-			t->grid[1][1]->filled = true;
-			t->grid[1][2]->filled = true;
-			t->grid[1][3]->filled = true;
+			t->grid[1][0].filled = true;
+			t->grid[1][1].filled = true;
+			t->grid[1][2].filled = true;
+			t->grid[1][3].filled = true;
 			
-			t->grid[2][0]->filled = false;
-			t->grid[2][1]->filled = false;
-			t->grid[2][2]->filled = false;
-			t->grid[2][3]->filled = false;
+			t->grid[2][0].filled = false;
+			t->grid[2][1].filled = false;
+			t->grid[2][2].filled = false;
+			t->grid[2][3].filled = false;
 			
-			t->grid[3][0]->filled = false;
-			t->grid[3][1]->filled = false;
-			t->grid[3][2]->filled = false;
-			t->grid[3][3]->filled = false;
+			t->grid[3][0].filled = false;
+			t->grid[3][1].filled = false;
+			t->grid[3][2].filled = false;
+			t->grid[3][3].filled = false;
 			
-			orientation = 0;
+			t->orientation = 0;
 			break;
 	}
 }
@@ -283,201 +285,201 @@ void rotate_j(tetromino_t *t)
 	switch (t->orientation)
 	{
 		case 0:
-			t->grid[0][0]->filled = false;
-			t->grid[0][1]->filled = true;
-			t->grid[0][2]->filled = true;
-			t->grid[0][3]->filled = false;
+			t->grid[0][0].filled = false;
+			t->grid[0][1].filled = true;
+			t->grid[0][2].filled = true;
+			t->grid[0][3].filled = false;
 			
-			t->grid[1][0]->filled = false;
-			t->grid[1][1]->filled = true;
-			t->grid[1][2]->filled = false;
-			t->grid[1][3]->filled = false;
+			t->grid[1][0].filled = false;
+			t->grid[1][1].filled = true;
+			t->grid[1][2].filled = false;
+			t->grid[1][3].filled = false;
 			
-			t->grid[2][0]->filled = false;
-			t->grid[2][1]->filled = true;
-			t->grid[2][2]->filled = false;
-			t->grid[2][3]->filled = false;
+			t->grid[2][0].filled = false;
+			t->grid[2][1].filled = true;
+			t->grid[2][2].filled = false;
+			t->grid[2][3].filled = false;
 			
-			t->grid[3][0]->filled = false;
-			t->grid[3][1]->filled = false;
-			t->grid[3][2]->filled = false;
-			t->grid[3][3]->filled = false;
+			t->grid[3][0].filled = false;
+			t->grid[3][1].filled = false;
+			t->grid[3][2].filled = false;
+			t->grid[3][3].filled = false;
 			
-			orientation = 1;
+			t->orientation = 1;
 			break;
 		
 		case 1:
-			t->grid[0][0]->filled = false;
-			t->grid[0][1]->filled = false;
-			t->grid[0][2]->filled = false;
-			t->grid[0][3]->filled = false;
+			t->grid[0][0].filled = false;
+			t->grid[0][1].filled = false;
+			t->grid[0][2].filled = false;
+			t->grid[0][3].filled = false;
 			
-			t->grid[1][0]->filled = true;
-			t->grid[1][1]->filled = true;
-			t->grid[1][2]->filled = true;
-			t->grid[1][3]->filled = false;
+			t->grid[1][0].filled = true;
+			t->grid[1][1].filled = true;
+			t->grid[1][2].filled = true;
+			t->grid[1][3].filled = false;
 			
-			t->grid[2][0]->filled = false;
-			t->grid[2][1]->filled = false;
-			t->grid[2][2]->filled = true;
-			t->grid[2][3]->filled = false;
+			t->grid[2][0].filled = false;
+			t->grid[2][1].filled = false;
+			t->grid[2][2].filled = true;
+			t->grid[2][3].filled = false;
 			
-			t->grid[3][0]->filled = false;
-			t->grid[3][1]->filled = false;
-			t->grid[3][2]->filled = false;
-			t->grid[3][3]->filled = false;
+			t->grid[3][0].filled = false;
+			t->grid[3][1].filled = false;
+			t->grid[3][2].filled = false;
+			t->grid[3][3].filled = false;
 			
-			orientation = 2;
+			t->orientation = 2;
 			break;
 		
 		case 2:
-			t->grid[0][0]->filled = false;
-			t->grid[0][1]->filled = true;
-			t->grid[0][2]->filled = false;
-			t->grid[0][3]->filled = false;
+			t->grid[0][0].filled = false;
+			t->grid[0][1].filled = true;
+			t->grid[0][2].filled = false;
+			t->grid[0][3].filled = false;
 			
-			t->grid[1][0]->filled = false;
-			t->grid[1][1]->filled = true;
-			t->grid[1][2]->filled = false;
-			t->grid[1][3]->filled = false;
+			t->grid[1][0].filled = false;
+			t->grid[1][1].filled = true;
+			t->grid[1][2].filled = false;
+			t->grid[1][3].filled = false;
 			
-			t->grid[2][0]->filled = true;
-			t->grid[2][1]->filled = true;
-			t->grid[2][2]->filled = false;
-			t->grid[2][3]->filled = false;
+			t->grid[2][0].filled = true;
+			t->grid[2][1].filled = true;
+			t->grid[2][2].filled = false;
+			t->grid[2][3].filled = false;
 			
-			t->grid[3][0]->filled = false;
-			t->grid[3][1]->filled = false;
-			t->grid[3][2]->filled = false;
-			t->grid[3][3]->filled = false;
+			t->grid[3][0].filled = false;
+			t->grid[3][1].filled = false;
+			t->grid[3][2].filled = false;
+			t->grid[3][3].filled = false;
 			
-			orientation = 3;
+			t->orientation = 3;
 			break;
 		
 		case 3:
-			t->grid[0][0]->filled = true;
-			t->grid[0][1]->filled = false;
-			t->grid[0][2]->filled = false;
-			t->grid[0][3]->filled = false;
+			t->grid[0][0].filled = true;
+			t->grid[0][1].filled = false;
+			t->grid[0][2].filled = false;
+			t->grid[0][3].filled = false;
 			
-			t->grid[1][0]->filled = true;
-			t->grid[1][1]->filled = true;
-			t->grid[1][2]->filled = true;
-			t->grid[1][3]->filled = false;
+			t->grid[1][0].filled = true;
+			t->grid[1][1].filled = true;
+			t->grid[1][2].filled = true;
+			t->grid[1][3].filled = false;
 			
-			t->grid[2][0]->filled = false;
-			t->grid[2][1]->filled = false;
-			t->grid[2][2]->filled = false;
-			t->grid[2][3]->filled = false;
+			t->grid[2][0].filled = false;
+			t->grid[2][1].filled = false;
+			t->grid[2][2].filled = false;
+			t->grid[2][3].filled = false;
 			
-			t->grid[3][0]->filled = false;
-			t->grid[3][1]->filled = false;
-			t->grid[3][2]->filled = false;
-			t->grid[3][3]->filled = false;
+			t->grid[3][0].filled = false;
+			t->grid[3][1].filled = false;
+			t->grid[3][2].filled = false;
+			t->grid[3][3].filled = false;
 			
-			orientation = 0;
+			t->orientation = 0;
 			break;
 	}
 }	
 
 void rotate_l(tetromino_t *t)
 {
-	case (t->orientation)
+	switch (t->orientation)
 	{
 		case 0:
-			t->grid[0][0]->filled = false;
-			t->grid[0][1]->filled = true;
-			t->grid[0][2]->filled = false;
-			t->grid[0][3]->filled = false;
+			t->grid[0][0].filled = false;
+			t->grid[0][1].filled = true;
+			t->grid[0][2].filled = false;
+			t->grid[0][3].filled = false;
 			
-			t->grid[1][0]->filled = false;
-			t->grid[1][1]->filled = true;
-			t->grid[1][2]->filled = false;
-			t->grid[1][3]->filled = false;
+			t->grid[1][0].filled = false;
+			t->grid[1][1].filled = true;
+			t->grid[1][2].filled = false;
+			t->grid[1][3].filled = false;
 			
-			t->grid[2][0]->filled = false;
-			t->grid[2][1]->filled = true;
-			t->grid[2][2]->filled = true;
-			t->grid[2][3]->filled = false;
+			t->grid[2][0].filled = false;
+			t->grid[2][1].filled = true;
+			t->grid[2][2].filled = true;
+			t->grid[2][3].filled = false;
 			
-			t->grid[3][0]->filled = false;
-			t->grid[3][1]->filled = false;
-			t->grid[3][2]->filled = false;
-			t->grid[3][3]->filled = false;
+			t->grid[3][0].filled = false;
+			t->grid[3][1].filled = false;
+			t->grid[3][2].filled = false;
+			t->grid[3][3].filled = false;
 			
-			orientation = 1;
+			t->orientation = 1;
 			break;
 		
 		case 1:
-			t->grid[0][0]->filled = false;
-			t->grid[0][1]->filled = false;
-			t->grid[0][2]->filled = false;
-			t->grid[0][3]->filled = false;
+			t->grid[0][0].filled = false;
+			t->grid[0][1].filled = false;
+			t->grid[0][2].filled = false;
+			t->grid[0][3].filled = false;
 			
-			t->grid[1][0]->filled = true;
-			t->grid[1][1]->filled = true;
-			t->grid[1][2]->filled = true;
-			t->grid[1][3]->filled = false;
+			t->grid[1][0].filled = true;
+			t->grid[1][1].filled = true;
+			t->grid[1][2].filled = true;
+			t->grid[1][3].filled = false;
 			
-			t->grid[2][0]->filled = true;
-			t->grid[2][1]->filled = false;
-			t->grid[2][2]->filled = false;
-			t->grid[2][3]->filled = false;
+			t->grid[2][0].filled = true;
+			t->grid[2][1].filled = false;
+			t->grid[2][2].filled = false;
+			t->grid[2][3].filled = false;
 			
-			t->grid[3][0]->filled = false;
-			t->grid[3][1]->filled = false;
-			t->grid[3][2]->filled = false;
-			t->grid[3][3]->filled = false;
+			t->grid[3][0].filled = false;
+			t->grid[3][1].filled = false;
+			t->grid[3][2].filled = false;
+			t->grid[3][3].filled = false;
 			
-			orientation = 2;
+			t->orientation = 2;
 			break;
 		
 		case 2:
-			t->grid[0][0]->filled = true;
-			t->grid[0][1]->filled = true;
-			t->grid[0][2]->filled = false;
-			t->grid[0][3]->filled = false;
+			t->grid[0][0].filled = true;
+			t->grid[0][1].filled = true;
+			t->grid[0][2].filled = false;
+			t->grid[0][3].filled = false;
 			
-			t->grid[1][0]->filled = false;
-			t->grid[1][1]->filled = true;
-			t->grid[1][2]->filled = false;
-			t->grid[1][3]->filled = false;
+			t->grid[1][0].filled = false;
+			t->grid[1][1].filled = true;
+			t->grid[1][2].filled = false;
+			t->grid[1][3].filled = false;
 			
-			t->grid[2][0]->filled = false;
-			t->grid[2][1]->filled = true;
-			t->grid[2][2]->filled = false;
-			t->grid[2][3]->filled = false;
+			t->grid[2][0].filled = false;
+			t->grid[2][1].filled = true;
+			t->grid[2][2].filled = false;
+			t->grid[2][3].filled = false;
 			
-			t->grid[3][0]->filled = false;
-			t->grid[3][1]->filled = false;
-			t->grid[3][2]->filled = false;
-			t->grid[3][3]->filled = false;
+			t->grid[3][0].filled = false;
+			t->grid[3][1].filled = false;
+			t->grid[3][2].filled = false;
+			t->grid[3][3].filled = false;
 			
-			orientation = 3;
+			t->orientation = 3;
 			break;
 		
 		case 3:
-			t->grid[0][0]->filled = false;
-			t->grid[0][1]->filled = false;
-			t->grid[0][2]->filled = true;
-			t->grid[0][3]->filled = false;
+			t->grid[0][0].filled = false;
+			t->grid[0][1].filled = false;
+			t->grid[0][2].filled = true;
+			t->grid[0][3].filled = false;
 			
-			t->grid[1][0]->filled = true;
-			t->grid[1][1]->filled = true;
-			t->grid[1][2]->filled = true;
-			t->grid[1][3]->filled = false;
+			t->grid[1][0].filled = true;
+			t->grid[1][1].filled = true;
+			t->grid[1][2].filled = true;
+			t->grid[1][3].filled = false;
 			
-			t->grid[2][0]->filled = false;
-			t->grid[2][1]->filled = false;
-			t->grid[2][2]->filled = false;
-			t->grid[2][3]->filled = false;
+			t->grid[2][0].filled = false;
+			t->grid[2][1].filled = false;
+			t->grid[2][2].filled = false;
+			t->grid[2][3].filled = false;
 			
-			t->grid[3][0]->filled = false;
-			t->grid[3][1]->filled = false;
-			t->grid[3][2]->filled = false;
-			t->grid[3][3]->filled = false;
+			t->grid[3][0].filled = false;
+			t->grid[3][1].filled = false;
+			t->grid[3][2].filled = false;
+			t->grid[3][3].filled = false;
 			
-			orientation = 0;
+			t->orientation = 0;
 			break;
 	}
 }
@@ -487,99 +489,99 @@ void rotate_z(tetromino_t *t)
 	switch (t->orientation)
 	{
 		case 0:
-			t->grid[0][0]->filled = false;
-			t->grid[0][1]->filled = false;
-			t->grid[0][2]->filled = true;
-			t->grid[0][3]->filled = false;
+			t->grid[0][0].filled = false;
+			t->grid[0][1].filled = false;
+			t->grid[0][2].filled = true;
+			t->grid[0][3].filled = false;
 			
-			t->grid[1][0]->filled = false;
-			t->grid[1][1]->filled = true;
-			t->grid[1][2]->filled = true;
-			t->grid[1][3]->filled = false;
+			t->grid[1][0].filled = false;
+			t->grid[1][1].filled = true;
+			t->grid[1][2].filled = true;
+			t->grid[1][3].filled = false;
 			
-			t->grid[2][0]->filled = false;
-			t->grid[2][1]->filled = true;
-			t->grid[2][2]->filled = false;
-			t->grid[2][3]->filled = false;
+			t->grid[2][0].filled = false;
+			t->grid[2][1].filled = true;
+			t->grid[2][2].filled = false;
+			t->grid[2][3].filled = false;
 			
-			t->grid[3][0]->filled = false;
-			t->grid[3][1]->filled = false;
-			t->grid[3][2]->filled = false;
-			t->grid[3][3]->filled = false;
+			t->grid[3][0].filled = false;
+			t->grid[3][1].filled = false;
+			t->grid[3][2].filled = false;
+			t->grid[3][3].filled = false;
 		
-			orientation = 1;
+			t->orientation = 1;
 			break;
 		
 		case 1:
-			t->grid[0][0]->filled = false;
-			t->grid[0][1]->filled = false;
-			t->grid[0][2]->filled = false;
-			t->grid[0][3]->filled = false;
+			t->grid[0][0].filled = false;
+			t->grid[0][1].filled = false;
+			t->grid[0][2].filled = false;
+			t->grid[0][3].filled = false;
 			
-			t->grid[1][0]->filled = true;
-			t->grid[1][1]->filled = true;
-			t->grid[1][2]->filled = false;
-			t->grid[1][3]->filled = false;
+			t->grid[1][0].filled = true;
+			t->grid[1][1].filled = true;
+			t->grid[1][2].filled = false;
+			t->grid[1][3].filled = false;
 			
-			t->grid[2][0]->filled = false;
-			t->grid[2][1]->filled = true;
-			t->grid[2][2]->filled = true;
-			t->grid[2][3]->filled = false;
+			t->grid[2][0].filled = false;
+			t->grid[2][1].filled = true;
+			t->grid[2][2].filled = true;
+			t->grid[2][3].filled = false;
 			
-			t->grid[3][0]->filled = false;
-			t->grid[3][1]->filled = false;
-			t->grid[3][2]->filled = false;
-			t->grid[3][3]->filled = false;
+			t->grid[3][0].filled = false;
+			t->grid[3][1].filled = false;
+			t->grid[3][2].filled = false;
+			t->grid[3][3].filled = false;
 			
-			orientation = 2;
+			t->orientation = 2;
 			break;
 		
 		case 2:
-			t->grid[0][0]->filled = false;
-			t->grid[0][1]->filled = true;
-			t->grid[0][2]->filled = false;
-			t->grid[0][3]->filled = false;
+			t->grid[0][0].filled = false;
+			t->grid[0][1].filled = true;
+			t->grid[0][2].filled = false;
+			t->grid[0][3].filled = false;
 			
-			t->grid[1][0]->filled = true;
-			t->grid[1][1]->filled = true;
-			t->grid[1][2]->filled = false;
-			t->grid[1][3]->filled = false;
+			t->grid[1][0].filled = true;
+			t->grid[1][1].filled = true;
+			t->grid[1][2].filled = false;
+			t->grid[1][3].filled = false;
 			
-			t->grid[2][0]->filled = true;
-			t->grid[2][1]->filled = false;
-			t->grid[2][2]->filled = false;
-			t->grid[2][3]->filled = false;
+			t->grid[2][0].filled = true;
+			t->grid[2][1].filled = false;
+			t->grid[2][2].filled = false;
+			t->grid[2][3].filled = false;
 			
-			t->grid[3][0]->filled = false;
-			t->grid[3][1]->filled = false;
-			t->grid[3][2]->filled = false;
-			t->grid[3][3]->filled = false;
+			t->grid[3][0].filled = false;
+			t->grid[3][1].filled = false;
+			t->grid[3][2].filled = false;
+			t->grid[3][3].filled = false;
 		
-			orientation = 3;
+			t->orientation = 3;
 			break;
 		
 		case 3:
-			t->grid[0][0]->filled = true;
-			t->grid[0][1]->filled = true;
-			t->grid[0][2]->filled = false;
-			t->grid[0][3]->filled = false;
+			t->grid[0][0].filled = true;
+			t->grid[0][1].filled = true;
+			t->grid[0][2].filled = false;
+			t->grid[0][3].filled = false;
 			
-			t->grid[1][0]->filled = false;
-			t->grid[1][1]->filled = true;
-			t->grid[1][2]->filled = true;
-			t->grid[1][3]->filled = false;
+			t->grid[1][0].filled = false;
+			t->grid[1][1].filled = true;
+			t->grid[1][2].filled = true;
+			t->grid[1][3].filled = false;
 			
-			t->grid[2][0]->filled = false;
-			t->grid[2][1]->filled = false;
-			t->grid[2][2]->filled = false;
-			t->grid[2][3]->filled = false;
+			t->grid[2][0].filled = false;
+			t->grid[2][1].filled = false;
+			t->grid[2][2].filled = false;
+			t->grid[2][3].filled = false;
 			
-			t->grid[3][0]->filled = false;
-			t->grid[3][1]->filled = false;
-			t->grid[3][2]->filled = false;
-			t->grid[3][3]->filled = false;
+			t->grid[3][0].filled = false;
+			t->grid[3][1].filled = false;
+			t->grid[3][2].filled = false;
+			t->grid[3][3].filled = false;
 			
-			orientation = 0;
+			t->orientation = 0;
 			break;
 	}
 }
@@ -589,99 +591,99 @@ void rotate_s(tetromino_t *t)
 	switch (t->orientation)
 	{
 		case 0:
-			t->grid[0][0]->filled = false;
-			t->grid[0][1]->filled = true;
-			t->grid[0][2]->filled = false;
-			t->grid[0][3]->filled = false;
+			t->grid[0][0].filled = false;
+			t->grid[0][1].filled = true;
+			t->grid[0][2].filled = false;
+			t->grid[0][3].filled = false;
 			
-			t->grid[1][0]->filled = false;
-			t->grid[1][1]->filled = true;
-			t->grid[1][2]->filled = true;
-			t->grid[1][3]->filled = false;
+			t->grid[1][0].filled = false;
+			t->grid[1][1].filled = true;
+			t->grid[1][2].filled = true;
+			t->grid[1][3].filled = false;
 			
-			t->grid[2][0]->filled = false;
-			t->grid[2][1]->filled = false;
-			t->grid[2][2]->filled = true;
-			t->grid[2][3]->filled = false;
+			t->grid[2][0].filled = false;
+			t->grid[2][1].filled = false;
+			t->grid[2][2].filled = true;
+			t->grid[2][3].filled = false;
 			
-			t->grid[3][0]->filled = false;
-			t->grid[3][1]->filled = false;
-			t->grid[3][2]->filled = false;
-			t->grid[3][3]->filled = false;
+			t->grid[3][0].filled = false;
+			t->grid[3][1].filled = false;
+			t->grid[3][2].filled = false;
+			t->grid[3][3].filled = false;
 			
-			orientation = 1;
+			t->orientation = 1;
 			break;
 		
 		case 1:
-			t->grid[0][0]->filled = false;
-			t->grid[0][1]->filled = false;
-			t->grid[0][2]->filled = false;
-			t->grid[0][3]->filled = false;
+			t->grid[0][0].filled = false;
+			t->grid[0][1].filled = false;
+			t->grid[0][2].filled = false;
+			t->grid[0][3].filled = false;
 			
-			t->grid[1][0]->filled = false;
-			t->grid[1][1]->filled = true;
-			t->grid[1][2]->filled = true;
-			t->grid[1][3]->filled = false;
+			t->grid[1][0].filled = false;
+			t->grid[1][1].filled = true;
+			t->grid[1][2].filled = true;
+			t->grid[1][3].filled = false;
 			
-			t->grid[2][0]->filled = true;
-			t->grid[2][1]->filled = true;
-			t->grid[2][2]->filled = false;
-			t->grid[2][3]->filled = false;
+			t->grid[2][0].filled = true;
+			t->grid[2][1].filled = true;
+			t->grid[2][2].filled = false;
+			t->grid[2][3].filled = false;
 			
-			t->grid[3][0]->filled = false;
-			t->grid[3][1]->filled = false;
-			t->grid[3][2]->filled = false;
-			t->grid[3][3]->filled = false;
+			t->grid[3][0].filled = false;
+			t->grid[3][1].filled = false;
+			t->grid[3][2].filled = false;
+			t->grid[3][3].filled = false;
 			
-			orientation = 2;
+			t->orientation = 2;
 			break;
 		
 		case 2:
-			t->grid[0][0]->filled = true;
-			t->grid[0][1]->filled = false;
-			t->grid[0][2]->filled = false;
-			t->grid[0][3]->filled = false;
+			t->grid[0][0].filled = true;
+			t->grid[0][1].filled = false;
+			t->grid[0][2].filled = false;
+			t->grid[0][3].filled = false;
 			
-			t->grid[1][0]->filled = true;
-			t->grid[1][1]->filled = true;
-			t->grid[1][2]->filled = false;
-			t->grid[1][3]->filled = false;
+			t->grid[1][0].filled = true;
+			t->grid[1][1].filled = true;
+			t->grid[1][2].filled = false;
+			t->grid[1][3].filled = false;
 			
-			t->grid[2][0]->filled = false;
-			t->grid[2][1]->filled = true;
-			t->grid[2][2]->filled = false;
-			t->grid[2][3]->filled = false;
+			t->grid[2][0].filled = false;
+			t->grid[2][1].filled = true;
+			t->grid[2][2].filled = false;
+			t->grid[2][3].filled = false;
 			
-			t->grid[3][0]->filled = false;
-			t->grid[3][1]->filled = false;
-			t->grid[3][2]->filled = false;
-			t->grid[3][3]->filled = false;
+			t->grid[3][0].filled = false;
+			t->grid[3][1].filled = false;
+			t->grid[3][2].filled = false;
+			t->grid[3][3].filled = false;
 			
-			orientation = 3;
+			t->orientation = 3;
 			break;
 		
 		case 3:
-			t->grid[0][0]->filled = false;
-			t->grid[0][1]->filled = true;
-			t->grid[0][2]->filled = true;
-			t->grid[0][3]->filled = false;
+			t->grid[0][0].filled = false;
+			t->grid[0][1].filled = true;
+			t->grid[0][2].filled = true;
+			t->grid[0][3].filled = false;
 			
-			t->grid[1][0]->filled = true;
-			t->grid[1][1]->filled = true;
-			t->grid[1][2]->filled = false;
-			t->grid[1][3]->filled = false;
+			t->grid[1][0].filled = true;
+			t->grid[1][1].filled = true;
+			t->grid[1][2].filled = false;
+			t->grid[1][3].filled = false;
 			
-			t->grid[2][0]->filled = false;
-			t->grid[2][1]->filled = false;
-			t->grid[2][2]->filled = false;
-			t->grid[2][3]->filled = false;
+			t->grid[2][0].filled = false;
+			t->grid[2][1].filled = false;
+			t->grid[2][2].filled = false;
+			t->grid[2][3].filled = false;
 			
-			t->grid[3][0]->filled = false;
-			t->grid[3][1]->filled = false;
-			t->grid[3][2]->filled = false;
-			t->grid[3][3]->filled = false;
+			t->grid[3][0].filled = false;
+			t->grid[3][1].filled = false;
+			t->grid[3][2].filled = false;
+			t->grid[3][3].filled = false;
 			
-			orientation = 0;
+			t->orientation = 0;
 			break;
 	}
 }
@@ -691,99 +693,99 @@ void rotate_t(tetromino_t *t)
 	switch (t->orientation)
 	{
 		case 0:
-			t->grid[0][0]->filled = false;
-			t->grid[0][1]->filled = true;
-			t->grid[0][2]->filled = false;
-			t->grid[0][3]->filled = false;
+			t->grid[0][0].filled = false;
+			t->grid[0][1].filled = true;
+			t->grid[0][2].filled = false;
+			t->grid[0][3].filled = false;
 			
-			t->grid[1][0]->filled = false;
-			t->grid[1][1]->filled = true;
-			t->grid[1][2]->filled = true;
-			t->grid[1][3]->filled = false;
+			t->grid[1][0].filled = false;
+			t->grid[1][1].filled = true;
+			t->grid[1][2].filled = true;
+			t->grid[1][3].filled = false;
 			
-			t->grid[2][0]->filled = false;
-			t->grid[2][1]->filled = true;
-			t->grid[2][2]->filled = false;
-			t->grid[2][3]->filled = false;
+			t->grid[2][0].filled = false;
+			t->grid[2][1].filled = true;
+			t->grid[2][2].filled = false;
+			t->grid[2][3].filled = false;
 			
-			t->grid[3][0]->filled = false;
-			t->grid[3][1]->filled = false;
-			t->grid[3][2]->filled = false;
-			t->grid[3][3]->filled = false;
+			t->grid[3][0].filled = false;
+			t->grid[3][1].filled = false;
+			t->grid[3][2].filled = false;
+			t->grid[3][3].filled = false;
 			
-			orientation = 1;
+			t->orientation = 1;
 			break;
 		
 		case 1:
-			t->grid[0][0]->filled = false;
-			t->grid[0][1]->filled = false;
-			t->grid[0][2]->filled = false;
-			t->grid[0][3]->filled = false;
+			t->grid[0][0].filled = false;
+			t->grid[0][1].filled = false;
+			t->grid[0][2].filled = false;
+			t->grid[0][3].filled = false;
 			
-			t->grid[1][0]->filled = true;
-			t->grid[1][1]->filled = true;
-			t->grid[1][2]->filled = true;
-			t->grid[1][3]->filled = false;
+			t->grid[1][0].filled = true;
+			t->grid[1][1].filled = true;
+			t->grid[1][2].filled = true;
+			t->grid[1][3].filled = false;
 			
-			t->grid[2][0]->filled = false;
-			t->grid[2][1]->filled = true;
-			t->grid[2][2]->filled = false;
-			t->grid[2][3]->filled = false;
+			t->grid[2][0].filled = false;
+			t->grid[2][1].filled = true;
+			t->grid[2][2].filled = false;
+			t->grid[2][3].filled = false;
 			
-			t->grid[3][0]->filled = false;
-			t->grid[3][1]->filled = false;
-			t->grid[3][2]->filled = false;
-			t->grid[3][3]->filled = false;
+			t->grid[3][0].filled = false;
+			t->grid[3][1].filled = false;
+			t->grid[3][2].filled = false;
+			t->grid[3][3].filled = false;
 			
-			orientation = 2;
+			t->orientation = 2;
 			break;
 		
 		case 2:
-			t->grid[0][0]->filled = false;
-			t->grid[0][1]->filled = true;
-			t->grid[0][2]->filled = false;
-			t->grid[0][3]->filled = false;
+			t->grid[0][0].filled = false;
+			t->grid[0][1].filled = true;
+			t->grid[0][2].filled = false;
+			t->grid[0][3].filled = false;
 			
-			t->grid[1][0]->filled = true;
-			t->grid[1][1]->filled = true;
-			t->grid[1][2]->filled = false;
-			t->grid[1][3]->filled = false;
+			t->grid[1][0].filled = true;
+			t->grid[1][1].filled = true;
+			t->grid[1][2].filled = false;
+			t->grid[1][3].filled = false;
 			
-			t->grid[2][0]->filled = false;
-			t->grid[2][1]->filled = true;
-			t->grid[2][2]->filled = false;
-			t->grid[2][3]->filled = false;
+			t->grid[2][0].filled = false;
+			t->grid[2][1].filled = true;
+			t->grid[2][2].filled = false;
+			t->grid[2][3].filled = false;
 			
-			t->grid[3][0]->filled = false;
-			t->grid[3][1]->filled = false;
-			t->grid[3][2]->filled = false;
-			t->grid[3][3]->filled = false;
+			t->grid[3][0].filled = false;
+			t->grid[3][1].filled = false;
+			t->grid[3][2].filled = false;
+			t->grid[3][3].filled = false;
 			
-			orientation = 3;
+			t->orientation = 3;
 			break;
 		
-		case 3
-			t->grid[0][0]->filled = false;
-			t->grid[0][1]->filled = true;
-			t->grid[0][2]->filled = false;
-			t->grid[0][3]->filled = false;
+		case 3:
+			t->grid[0][0].filled = false;
+			t->grid[0][1].filled = true;
+			t->grid[0][2].filled = false;
+			t->grid[0][3].filled = false;
 			
-			t->grid[1][0]->filled = true;
-			t->grid[1][1]->filled = true;
-			t->grid[1][2]->filled = true;
-			t->grid[1][3]->filled = false;
+			t->grid[1][0].filled = true;
+			t->grid[1][1].filled = true;
+			t->grid[1][2].filled = true;
+			t->grid[1][3].filled = false;
 			
-			t->grid[2][0]->filled = false;
-			t->grid[2][1]->filled = false;
-			t->grid[2][2]->filled = false;
-			t->grid[2][3]->filled = false;
+			t->grid[2][0].filled = false;
+			t->grid[2][1].filled = false;
+			t->grid[2][2].filled = false;
+			t->grid[2][3].filled = false;
 			
-			t->grid[3][0]->filled = false;
-			t->grid[3][1]->filled = false;
-			t->grid[3][2]->filled = false;
-			t->grid[3][3]->filled = false;
+			t->grid[3][0].filled = false;
+			t->grid[3][1].filled = false;
+			t->grid[3][2].filled = false;
+			t->grid[3][3].filled = false;
 			
-			orientation = 0;
+			t->orientation = 0;
 			break;
 	}
 }

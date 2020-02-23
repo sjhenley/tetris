@@ -11,7 +11,7 @@ CXXFLAGS = -Wall -Werror -ggdb3 -funroll-loops
 LDFLAGS = -lncurses
 
 BIN = tetris
-OBJS = tetris.o io.o
+OBJS = tetris.o board.o io.o tetromino.o
 
 all: $(BIN) etags
 
